@@ -14,4 +14,5 @@ namespace ProjectOverviewManager
     public partial class App : Application
     {
     }
+
 }

@@ -9,13 +9,7 @@
     <Grid Margin="-112,-166,-127.6,-178.2">
         <ListView x:Name="ProjectListView" HorizontalAlignment="Left" Height="auto" Margin="112,187,0,0" VerticalAlignment="Top" Width="993" SelectionChanged="ProjectListView_SelectionChanged">
             <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Inkö" Width="200"/>
-                    <GridViewColumn Header="Analys" Width="200"/>
-                    <GridViewColumn Header="Under arbete" Width="200"/>
-                    <GridViewColumn Header="Granskning" Width="200"/>
-                    <GridViewColumn Header="Klart" Width="200"/>
-                </GridView>
+                <GridView x:Name="MyGridView"></GridView>
             </ListView.View>
         </ListView>
         <Menu x:Name="TopMenu" HorizontalAlignment="Left" Height="20" Margin="112,167,0,0" VerticalAlignment="Top" Width="993" Grid.Column="5">
