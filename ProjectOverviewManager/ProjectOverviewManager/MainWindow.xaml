@@ -1,12 +1,30 @@
-﻿<Window x:Class="ProjectOverviewManager.MainWindow"
+﻿<Window x:Name="ProjectWindow" x:Class="ProjectOverviewManager.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectOverviewManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Project View" Height="500" Width="1000">
+    <Grid Margin="-112,-166,-127.6,-178.2">
+        <ListView x:Name="ProjectListView" HorizontalAlignment="Left" Height="auto" Margin="112,187,0,0" VerticalAlignment="Top" Width="993" SelectionChanged="ProjectListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Inkö" Width="200"/>
+                    <GridViewColumn Header="Analys" Width="200"/>
+                    <GridViewColumn Header="Under arbete" Width="200"/>
+                    <GridViewColumn Header="Granskning" Width="200"/>
+                    <GridViewColumn Header="Klart" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Menu x:Name="TopMenu" HorizontalAlignment="Left" Height="20" Margin="112,167,0,0" VerticalAlignment="Top" Width="993" Grid.Column="5">
+            <MenuItem Header="Arkiv" Height="20" Width="auto" AllowDrop="True" StaysOpenOnClick="True" Background="#FFCBC7C7" >
+                
+            </MenuItem>
+            <MenuItem Header="Redigera" Height="20" Width="auto" AllowDrop="True" StaysOpenOnClick="True" />
+            <MenuItem Header="Verktyg" Height="20" Width="auto"  AllowDrop="True" StaysOpenOnClick="True"/>
+            <MenuItem Header="Hjälp" Height="20" Width="auto"  AllowDrop="True" StaysOpenOnClick="True"/>
+        </Menu>
     </Grid>
 </Window>
