@@ -16,15 +16,18 @@ namespace ProjectOverviewManager
     /// </summary>
     public partial class App : Application
     {
-        private SQLiteConnection connection = new SQLiteConnection(@"Data source=C:\Users\Administrator\Documents\GitHub\ProjectOverviewManager\db\main_db_file.db");
-        private ArrayList cards = new ArrayList();
-        private MainWindow mainWindow = new MainWindow();
+        private SQLiteConnection connection = new SQLiteConnection(ConfigurationManager.ConnectionStrings["local_sqlite"].ConnectionString);
+        private ArrayList cards = null;
+        private MainWindow mainWindow = null;
 
-        public App()
+        private void Application_Startup(object sender, StartupEventArgs e)
         {
+            mainWindow = new MainWindow();
+            cards = new ArrayList();
             AddStatusColumns();
             CreateCards();
             AddCards();
+            mainWindow.Show();
         }
 
         private void AddCards()
