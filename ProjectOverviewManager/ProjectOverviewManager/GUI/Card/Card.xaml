@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ProjectOverviewManager.GUI.Card.Card"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectOverviewManager.GUI.Card"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Rectangle x:Name="CardRec" Fill="#FFC2C3D4" HorizontalAlignment="Left" Height="300" Stroke="Black" VerticalAlignment="Top" Width="300"  RadiusX="9" RadiusY="9"/>
+        <DatePicker HorizontalAlignment="Left" Margin="178,250,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="CardLabel" Content="Projekt " HorizontalAlignment="Left" Margin="117,10,0,0" VerticalAlignment="Top" Width="98" FontSize="16" FontFamily="Segoe UI Historic" FontWeight="Bold"/>
+        <StatusBar HorizontalAlignment="Left" Height="53" Margin="51,127,0,0" VerticalAlignment="Top" Width="211"/>
+        <ComboBox HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Width="41"/>
+
+    </Grid>
+</UserControl>

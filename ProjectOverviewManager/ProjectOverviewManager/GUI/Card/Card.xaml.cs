@@ -13,16 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectOverviewManager.MenuControl
+namespace ProjectOverviewManager.GUI.Card
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for Card.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class Card : UserControl
     {
-        public UserControl1()
+        public Card()
         {
             InitializeComponent();
+            
         }
+
     }
 }

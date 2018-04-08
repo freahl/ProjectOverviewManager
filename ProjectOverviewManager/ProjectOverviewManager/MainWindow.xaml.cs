@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
+using ProjectOverviewManager.GUI.Card;
 
 namespace ProjectOverviewManager
 {
@@ -27,10 +28,11 @@ namespace ProjectOverviewManager
         {
             InitializeComponent();
 
-            connection = new SQLiteConnection(@"Data source=C:\Users\Administrator\Documents\GitHub\ProjectOverviewManager\db\main_db_file.db");
+            connection = new SQLiteConnection(@"Data Source = C:\Users\fredr\Desktop\C#ApplicationProjects\FredrikAndCarlsProjects\ProjectOverviewManager\db\main_db_file.db");
             connection.Open();
             SQLiteCommand cmd = connection.CreateCommand();
             cmd.CommandText = "SELECT * FROM Status";
+
             using (SQLiteDataReader rdr = cmd.ExecuteReader())
             {
                 while (rdr.Read())
@@ -39,7 +41,7 @@ namespace ProjectOverviewManager
                     // skapar vi kolumner dynamiskt
                     GridViewColumn column = new GridViewColumn();
                     column.Header = rdr.GetString(1);
-                    column.Width = 200;
+                    column.Width =200;
                     MyGridView.Columns.Add(column);
                 }
             }
@@ -49,6 +51,13 @@ namespace ProjectOverviewManager
         private void ProjectListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void ArkivBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CardWindow cardWindow = new CardWindow();
+            cardWindow.Show();
+   
         }
     }
 }
