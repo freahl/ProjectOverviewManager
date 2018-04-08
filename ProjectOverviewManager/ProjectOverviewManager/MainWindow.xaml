@@ -6,25 +6,17 @@
         xmlns:local="clr-namespace:ProjectOverviewManager"
         mc:Ignorable="d"
         Title="Project View" Height="500" Width="1000">
-    <Grid Margin="-112,-166,-127.6,-178.2">
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FFDEF3FF" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Margin="-112,-166,-127.6,-178.2" Background="#FFFCFCFC">
         <ListView x:Name="ProjectListView" HorizontalAlignment="Left" Height="auto" Margin="112,187,0,0" VerticalAlignment="Top" Width="993" SelectionChanged="ProjectListView_SelectionChanged">
             <ListView.View>
                 <GridView x:Name="StatusGrid"></GridView>
             </ListView.View>
         </ListView>
-        <Menu x:Name="TopMenu" HorizontalAlignment="Left" Height="20" Margin="112,167,0,0" VerticalAlignment="Top" Width="993" Grid.Column="5">
-            <MenuItem x:Name="ArkivBtn" Header="Arkiv" Height="20" Width="auto" AllowDrop="True" StaysOpenOnClick="True" Background="#FFCBC7C7" Click="ArkivBtn_Click" >
-
-            </MenuItem>
-            <MenuItem Header="Redigera" Height="20" Width="auto" AllowDrop="True" StaysOpenOnClick="True" />
-            <MenuItem Header="Verktyg" Height="20" Width="auto"  AllowDrop="True" StaysOpenOnClick="True"/>
-            <MenuItem Header="Hjälp" Height="20" Width="auto"  AllowDrop="True" StaysOpenOnClick="True"/>
+        <Menu x:Name="TopMenu" HorizontalAlignment="Left" Height="55" Margin="112,167,0,0" VerticalAlignment="Top" Width="993" Background="#FF315C91" >
+            <MenuItem Header="Verktyg" FontSize="16" Height="55" Width="auto"  AllowDrop="True" StaysOpenOnClick="True"/>
+            <MenuItem x:Name="ArkivBtn" Header="Nytt projekt" FontSize="16" Height="55" Width="101" AllowDrop="True" StaysOpenOnClick="True" Click="ArkivBtn_Click" />
+            <MenuItem Header="Pågående projekt" FontSize="16" Height="55" Width="auto" AllowDrop="True" StaysOpenOnClick="True" />
+            <MenuItem Header="Hjälp" FontSize="16" Height="55" Width="auto"  AllowDrop="True" StaysOpenOnClick="True"/>
         </Menu>
     </Grid>
 </Window>

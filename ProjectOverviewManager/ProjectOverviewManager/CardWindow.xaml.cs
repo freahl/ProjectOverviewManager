@@ -22,9 +22,13 @@ namespace ProjectOverviewManager
         public CardWindow()
         {
             InitializeComponent();
-          
+            Setup();
         }
 
+        private void Setup()
+        {
+            HideSettings();
+        }
         private void Card_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
@@ -38,6 +42,41 @@ namespace ProjectOverviewManager
         private void MenuBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void SetCardLabel(string labelName)
+        {
+            CardLabel.Content = labelName;
+        }
+
+        private void settings_Click(object sender, RoutedEventArgs e)
+        {
+            ShowSettings();
+        }
+
+        private void ShowSettings()
+        {
+            ProjectNameLabel.Visibility = Visibility.Visible;
+            ProjectNameTextBox.Visibility = Visibility.Visible;
+            ProjectDeadLineLabel.Visibility = Visibility.Visible;
+            ProjectDatePicker.Visibility = Visibility.Visible;
+            SetSettingsBtn.Visibility = Visibility.Visible;
+        }
+
+        private void HideSettings()
+        {
+            ProjectNameLabel.Visibility = Visibility.Hidden;
+            ProjectNameTextBox.Visibility = Visibility.Hidden;
+            ProjectDeadLineLabel.Visibility = Visibility.Hidden;
+            ProjectDatePicker.Visibility = Visibility.Hidden;
+            SetSettingsBtn.Visibility = Visibility.Hidden;
+        }
+
+        private void SetSettingsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SetCardLabel(ProjectNameTextBox.Text);
+            HideSettings();
+            ProjectNameTextBox.Text = ""; 
         }
     }
 }

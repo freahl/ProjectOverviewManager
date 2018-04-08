@@ -8,6 +8,7 @@ using System.Windows;
 using System.Data.SQLite;
 using System.Collections;
 using System.Windows.Controls;
+using ProjectOverviewManager.GUI.Card;
 
 namespace ProjectOverviewManager
 {
@@ -26,17 +27,11 @@ namespace ProjectOverviewManager
             cards = new ArrayList();
             AddStatusColumns();
             CreateCards();
-            AddCards();
+          
             mainWindow.Show();
         }
 
-        private void AddCards()
-        {
-            foreach (Card c in cards)
-            {
-
-            }
-        }
+        
 
         private void CreateCards()
         {

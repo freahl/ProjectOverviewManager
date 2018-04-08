@@ -22,30 +22,15 @@ namespace ProjectOverviewManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-            connection = new SQLiteConnection(@"Data Source = C:\Users\fredr\Desktop\C#ApplicationProjects\FredrikAndCarlsProjects\ProjectOverviewManager\db\main_db_file.db");
-            connection.Open();
-            SQLiteCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Status";
-
-            using (SQLiteDataReader rdr = cmd.ExecuteReader())
-            {
-                while (rdr.Read())
-                {
-                    // För varje status i svaret från databasen
-                    // skapar vi kolumner dynamiskt
-                    GridViewColumn column = new GridViewColumn();
-                    column.Header = rdr.GetString(1);
-                    column.Width =200;
-                    MyGridView.Columns.Add(column);
-                }
-            }
-            connection.Close();
+        public void AddStatusColumn(GridViewColumn column)
+        {
+            StatusGrid.Columns.Add(column);
         }
 
         private void ProjectListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -5,15 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectOverviewManager"
         mc:Ignorable="d"
-        Title="CardWindow" Height="430" Width="430" AllowsTransparency="True" WindowStyle="None">
+        Title="Project window" Height="430" Width="450"  WindowStyle="ThreeDBorderWindow">
     <Grid>
-        <Rectangle x:Name="Card" HorizontalAlignment="Stretch" Height="430" Margin="0,0,0.4,0.4" Stroke="Black" VerticalAlignment="Stretch" Width="430" RadiusX="9" RadiusY="9" MouseDown="Card_MouseDown">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6496F9" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
+        <Rectangle x:Name="Card" HorizontalAlignment="Stretch" Height="430" Margin="0,0,0.4,0.4" Stroke="Black" VerticalAlignment="Stretch" Width="430" RadiusX="9" RadiusY="9" MouseDown="Card_MouseDown" Fill="White">
             <Rectangle.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -21,7 +15,7 @@
                 </LinearGradientBrush>
             </Rectangle.OpacityMask>
         </Rectangle>
-        <Rectangle x:Name="CardMenu" HorizontalAlignment="Stretch" Height="100" Margin="0,0,0.4,0" RadiusY="9" RadiusX="9" Stroke="Black" VerticalAlignment="Top" Width="430" MouseDown="CardMenu_MouseDown">
+        <Rectangle x:Name="CardMenu" HorizontalAlignment="Stretch" Height="100" Margin="2,0,1.6,0" RadiusY="9" RadiusX="9" Stroke="Black" VerticalAlignment="Top" Width="430" MouseDown="CardMenu_MouseDown">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -29,17 +23,16 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <DatePicker x:Name="CardDatePicker" HorizontalAlignment="Left" Margin="10,343,0,0" VerticalAlignment="Top" Height="34" Width="151" RenderTransformOrigin="0.5,0.535"/>
-        <StatusBar x:Name="CardStatusBar" HorizontalAlignment="Left" Height="37" Margin="10,105,0,0" VerticalAlignment="Top" Width="410"/>
-        <Menu x:Name="MenuBar" HorizontalAlignment="Left" Height="100" Margin="10,0,0,0" VerticalAlignment="Top" Width="410" Foreground="#FFF1E7E7" FontSize="20" MouseDown="MenuBar_MouseDown">
-            <Menu.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF2974F3" Offset="1"/>
-                </LinearGradientBrush>
-            </Menu.Background>
-            <MenuItem x:Name="AddFiles" Header="Lägg till filer" ></MenuItem>
+        <Label x:Name="CardLabel" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="109,10,0,300.8" VerticalAlignment="Center" Width="274" Height="90" FontSize="18" FontWeight="Medium" TextOptions.TextHintingMode="Fixed" Foreground="#FFEA2828"/>
+        <Menu HorizontalAlignment="Left" Height="80" Margin="24,10,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.441,0.191">
+        <MenuItem Header="Menu" FontSize="18" Height="80" Width="80">
+                <MenuItem x:Name="Settings" Header="Settings" Click="settings_Click"></MenuItem>
+        </MenuItem>
         </Menu>
-
+        <Label x:Name="ProjectNameLabel" Content="Project Name" HorizontalAlignment="Left" Margin="52,147,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox x:Name="ProjectNameTextBox" HorizontalAlignment="Left" Height="23" Margin="162,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="ProjectDeadLineLabel" Content="Project Deadline" HorizontalAlignment="Left" Margin="52,188,0,0" VerticalAlignment="Top" Width="auto"/>
+        <DatePicker x:Name="ProjectDatePicker" HorizontalAlignment="Left" Margin="162,189,0,0" VerticalAlignment="Top" Height="34" Width="151" RenderTransformOrigin="0.5,0.535"/>
+        <Button x:Name="SetSettingsBtn" Content="Go!" HorizontalAlignment="Left" Margin="59,255,0,0" VerticalAlignment="Top" Width="Auto" Click="SetSettingsBtn_Click"/>
     </Grid>
 </Window>
