@@ -22,11 +22,11 @@ namespace ProjectOverviewManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SQLiteConnection connection;
-
+        
         public MainWindow()
         {
             InitializeComponent();
+        }
 
             connection = new SQLiteConnection(@"Data Source = C:\Users\fredr\Desktop\C#ApplicationProjects\FredrikAndCarlsProjects\ProjectOverviewManager\db\main_db_file.db");
             connection.Open();
