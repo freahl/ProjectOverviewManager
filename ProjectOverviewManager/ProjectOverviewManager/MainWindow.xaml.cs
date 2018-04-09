@@ -38,11 +38,11 @@ namespace ProjectOverviewManager
 
         }
 
-        private void ArkivBtn_Click(object sender, RoutedEventArgs e)
+
+        private void newProject_Click(object sender, RoutedEventArgs e)
         {
             CardWindow cardWindow = new CardWindow();
             cardWindow.Show();
-   
         }
     }
 }
