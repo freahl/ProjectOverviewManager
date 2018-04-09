@@ -24,7 +24,9 @@
                 <MenuItem x:Name="removeProject" Header="Ta bort projekt" FontSize="16" Height="55" Width="auto" AllowDrop="True" StaysOpenOnClick="True" Background="#FF55A0FC"/>
             </MenuItem>
             <MenuItem Header="Pågående projekt" FontSize="16" Height="55" Width="auto" AllowDrop="True" StaysOpenOnClick="True" />
-            <MenuItem Header="Hjälp" FontSize="16" Height="55" Width="auto"  AllowDrop="True" StaysOpenOnClick="True"/>
+            <MenuItem Header="Hjälp" FontSize="16" Height="55" Width="auto"  AllowDrop="True" StaysOpenOnClick="True">
+                <MenuItem Header="Ring Carl 0723665750" Background="#FF55A0FC"/>
+            </MenuItem>
         </Menu>
     </Grid>
 </Window>
