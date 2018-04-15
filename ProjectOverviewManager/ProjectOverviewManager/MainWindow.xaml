@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Project View" Height="500" Width="1000">
     <Grid Margin="-112,-166,-127.6,-178.2" Background="#FFFCFCFC">
-        <ListView x:Name="ProjectListView" HorizontalAlignment="Left" Height="617" Margin="112,187,0,0" VerticalAlignment="Top" Width="auto" SelectionChanged="ProjectListView_SelectionChanged">
+        <ListView x:Name="ProjectListView" HorizontalAlignment="Left" Height="617" Margin="112,223,0,-25.4" VerticalAlignment="Top" Width="993" SelectionChanged="ProjectListView_SelectionChanged">
             <ListView.View>
                 <GridView x:Name="StatusGrid"></GridView>
             </ListView.View>

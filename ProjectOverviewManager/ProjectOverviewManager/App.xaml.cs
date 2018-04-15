@@ -43,13 +43,19 @@ namespace ProjectOverviewManager
                 while (rdr.Read())
                 {
                     String title = rdr.GetString(1);
-                    String description = rdr.GetString(4);
                     String date = rdr.GetString(2);
-                    Card c = new Card(title, description, date);
-                    cards.Add(c);
+                    int statusId = rdr.GetInt32(3);
+                    String description = rdr.GetString(4);
+                    Card c = new Card(title, date, statusId, description);
+               
+                    //AddCardToColumn(c);
                 }
             }
             connection.Close();
+        }
+        private void AddCardToColumn(Card c)
+        {
+
         }
 
         private void AddStatusColumns()
@@ -62,10 +68,8 @@ namespace ProjectOverviewManager
                 while (rdr.Read())
                 {
                     // For every status create a column
-                    GridViewColumn column = new GridViewColumn();
-                    column.Header = rdr.GetString(1);
-                    column.Width = 200;
-                    mainWindow.AddStatusColumn(column);
+                    StatusColumn statusCol = new StatusColumn(rdr.GetString(1), 200);
+                    mainWindow.AddStatusColumn(statusCol);
                 }
             }
             connection.Close();

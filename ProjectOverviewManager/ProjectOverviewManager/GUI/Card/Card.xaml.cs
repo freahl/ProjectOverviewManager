@@ -21,15 +21,17 @@ namespace ProjectOverviewManager.GUI.Card
     public partial class Card : UserControl
     {
         
-            private String title;
-            private String description;
-            private String date;
+            private String _title;
+            private String _description;
+            private String _date;
+            private int _statusId;
 
-            public Card(String title, String description, String date)
+            public Card(String title, String date,int statusId, String description)
             {
-                this.title = title;
-                this.description = description;
-                this.date = date;
+                this._title = title;
+                this._date = date;
+                this._statusId = statusId;
+                this._description = description;
             }
         
 

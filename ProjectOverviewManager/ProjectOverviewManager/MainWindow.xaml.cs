@@ -38,7 +38,6 @@ namespace ProjectOverviewManager
 
         }
 
-
         private void newProject_Click(object sender, RoutedEventArgs e)
         {
             CardWindow cardWindow = new CardWindow();
