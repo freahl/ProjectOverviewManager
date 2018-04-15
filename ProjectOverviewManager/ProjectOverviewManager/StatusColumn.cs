@@ -10,11 +10,17 @@ namespace ProjectOverviewManager
 {
     public class StatusColumn :  GridViewColumn
     {
-        public StatusColumn(string Header,int Width)
+        private int _columnId;
+        public StatusColumn(string Header,double Width,int columnId)
         {
-            this.Header = Header;
+            this.Header = Header; 
             this.Width = Width;
-            //GetCards()
+            _columnId = columnId;
+        }
+
+        public int GetColumnId()
+        {
+            return _columnId;
         }
 
      

@@ -18,23 +18,22 @@ namespace ProjectOverviewManager
     public partial class App : Application
     {
         private SQLiteConnection connection = new SQLiteConnection(ConfigurationManager.ConnectionStrings["local_sqlite"].ConnectionString);
-        private ArrayList cards = null;
         private MainWindow mainWindow = null;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             mainWindow = new MainWindow();
-            cards = new ArrayList();
+            List<Card> cards = CreateCards();
             AddStatusColumns();
-            CreateCards();
-          
+            mainWindow.AddCardsToColumn(cards);
             mainWindow.Show();
         }
 
         
 
-        private void CreateCards()
+        private List<Card> CreateCards()
         {
+            List<Card> cardList = new List<Card>();
             connection.Open();
             SQLiteCommand cmd = connection.CreateCommand();
             cmd.CommandText = "SELECT * FROM Card";
@@ -47,17 +46,13 @@ namespace ProjectOverviewManager
                     int statusId = rdr.GetInt32(3);
                     String description = rdr.GetString(4);
                     Card c = new Card(title, date, statusId, description);
-               
-                    //AddCardToColumn(c);
+                    cardList.Add(c);
                 }
             }
             connection.Close();
+            return cardList;
         }
-        private void AddCardToColumn(Card c)
-        {
-
-        }
-
+        
         private void AddStatusColumns()
         {
             connection.Open();

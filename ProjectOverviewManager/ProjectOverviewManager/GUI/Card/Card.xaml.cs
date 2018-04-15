@@ -21,19 +21,39 @@ namespace ProjectOverviewManager.GUI.Card
     public partial class Card : UserControl
     {
         
-            private String _title;
-            private String _description;
-            private String _date;
-            private int _statusId;
+            protected String title;
+            protected String description;
+            protected String date;
+            protected int statusId;
 
             public Card(String title, String date,int statusId, String description)
             {
-                this._title = title;
-                this._date = date;
-                this._statusId = statusId;
-                this._description = description;
+                this.title = title;
+                this.date = date;
+                this.statusId = statusId;
+                this.description = description;
             }
-        
 
+        #region Get-Methods
+        public int GetStatusId()
+        {
+            return statusId;
+        }
+
+        public string GetDate()
+        {
+            return date;
+        }
+
+        public string GetTitle()
+        {
+            return title;
+        }
+
+        public string GetDescription()
+        {
+            return description;
+        }
+        #endregion
     }
 }
