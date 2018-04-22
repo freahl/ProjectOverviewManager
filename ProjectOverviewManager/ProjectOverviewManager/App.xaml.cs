@@ -9,6 +9,8 @@ using System.Data.SQLite;
 using System.Collections;
 using System.Windows.Controls;
 using ProjectOverviewManager.GUI.Card;
+using System.Windows.Media;
+
 
 namespace ProjectOverviewManager
 {
@@ -19,7 +21,7 @@ namespace ProjectOverviewManager
     {
         private SQLiteConnection connection = new SQLiteConnection(ConfigurationManager.ConnectionStrings["local_sqlite"].ConnectionString);
         private MainWindow mainWindow = null;
-
+      
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             mainWindow = new MainWindow();
@@ -27,9 +29,10 @@ namespace ProjectOverviewManager
             AddStatusColumns();
             mainWindow.AddCardsToColumn(cards);
             mainWindow.Show();
-        }
+            ShowWindow();
 
-        
+
+        }
 
         private List<Card> CreateCards()
         {
@@ -63,13 +66,24 @@ namespace ProjectOverviewManager
                 while (rdr.Read())
                 {
                     // For every status create a column
-                    StatusColumn statusCol = new StatusColumn(rdr.GetString(1), 200);
+                    StatusColumn statusCol = new StatusColumn(rdr.GetString(1), 200,rdr.GetInt32(0));
                     mainWindow.AddStatusColumn(statusCol);
                 }
             }
             connection.Close();
         }
 
+        private void ShowWindow()
+        {   
+            
+            Window RootWindow = new Window();
+           
+            RootWindow.Content = new DynamicGrid();
+            RootWindow.Show();
+            
+        }
     }
 
 }
+
+

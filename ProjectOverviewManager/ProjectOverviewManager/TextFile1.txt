@@ -1,0 +1,3 @@
+﻿TO-DO plan
+En klass som skapar ett tomt Window med ett dynamiskt grid.
+Prova att lägga till rectangle objects i gridet.

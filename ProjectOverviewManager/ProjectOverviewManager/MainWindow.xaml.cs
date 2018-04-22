@@ -26,6 +26,7 @@ namespace ProjectOverviewManager
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         public void AddStatusColumn(GridViewColumn column)

@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Rectangle x:Name="ProjectCard" Fill="#FFC2C3D4" HorizontalAlignment="Left" Height="300" Stroke="Black" VerticalAlignment="Top" Width="300"  RadiusX="9" RadiusY="9"/>
+        <Rectangle x:Name="ProjectCard" Fill="#FF0E16A0" HorizontalAlignment="Left" Stroke="Black" VerticalAlignment="Top"  RadiusX="9" RadiusY="9"/>
     </Grid>
 </UserControl>
