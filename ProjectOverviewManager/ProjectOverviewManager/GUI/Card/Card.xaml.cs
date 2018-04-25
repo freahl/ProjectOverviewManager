@@ -18,21 +18,23 @@ namespace ProjectOverviewManager.GUI.Card
     /// <summary>
     /// Interaction logic for Card.xaml
     /// </summary>
+    /// 
     public partial class Card : UserControl
     {
+        public Rectangle rectangle = new Rectangle();
         
-            protected String title;
-            protected String description;
-            protected String date;
-            protected int statusId;
+        protected String title;
+        protected String description;
+        protected String date;
+        protected int statusId;
 
-            public Card(String title, String date,int statusId, String description)
-            {
-                this.title = title;
-                this.date = date;
-                this.statusId = statusId;
-                this.description = description;
-            }
+        public Card(String title, String date,int statusId, String description)
+        {
+            this.title = title;
+            this.date = date;
+            this.statusId = statusId;
+            this.description = description;
+        }
 
         #region Get-Methods
         public int GetStatusId()
@@ -53,6 +55,12 @@ namespace ProjectOverviewManager.GUI.Card
         public string GetDescription()
         {
             return description;
+        }
+
+        public Rectangle GetCard()
+        {   
+            rectangle.Fill = new SolidColorBrush(System.Windows.Media.Colors.LightSteelBlue);
+            return rectangle;
         }
         #endregion
     }

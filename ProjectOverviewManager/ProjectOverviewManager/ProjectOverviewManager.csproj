@@ -75,6 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CardDataMgr.cs" />
     <Compile Include="ColumnDataMgr.cs" />
     <Compile Include="DynamicGrid.cs" />
     <Compile Include="GridTestWindow.xaml.cs">

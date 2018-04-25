@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows;
+using ProjectOverviewManager.GUI.Card;
+using System.Windows.Shapes;
 
 namespace ProjectOverviewManager
 {
@@ -13,21 +15,24 @@ namespace ProjectOverviewManager
     {
         private ColumnDataMgr ColMgr = new ColumnDataMgr();
         private RowDataMgr RowMgr = new RowDataMgr();
+        private CardDataMgr CardMgr = new CardDataMgr();
+    
         public DynamicGrid()
         {
-            SetGrid();
-            
+            SetGrid();  
         }
         
         protected void SetGrid()
         {
+            
             HorizontalAlignment = HorizontalAlignment.Stretch;
             VerticalAlignment = VerticalAlignment.Stretch;
             ShowGridLines = true;
-            Background = new SolidColorBrush(Colors.AntiqueWhite);
+            Background = new SolidColorBrush(Colors.White);
 
             AddColumnsToGrid();
             AddRowsToGrid();
+            AddCardsToGrid();
         }
 
         protected void AddColumnsToGrid()
@@ -46,6 +51,17 @@ namespace ProjectOverviewManager
             foreach(RowDefinition r in RowMgr.GetRows())
             {
                 RowDefinitions.Add(r);
+            }
+        }
+
+        protected void AddCardsToGrid()
+        {
+           foreach(Card card in CardMgr.GetCards())
+            {
+                Children.Add(card.GetCard());
+                SetRow(card, 1); // Här ska en metod för att kolla om första raden är kolumnen är upptagen och om den är det så lägg kortet på raden under.
+                SetColumn(card, card.GetStatusId());
+                
             }
         }
     }

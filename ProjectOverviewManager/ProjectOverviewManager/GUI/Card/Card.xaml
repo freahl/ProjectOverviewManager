@@ -6,7 +6,5 @@
              xmlns:local="clr-namespace:ProjectOverviewManager.GUI.Card"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Rectangle x:Name="ProjectCard" Fill="#FF0E16A0" HorizontalAlignment="Left" Stroke="Black" VerticalAlignment="Top"  RadiusX="9" RadiusY="9"/>
-    </Grid>
+    <Grid/>
 </UserControl>
