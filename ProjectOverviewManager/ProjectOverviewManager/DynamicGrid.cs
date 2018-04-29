@@ -30,19 +30,20 @@ namespace ProjectOverviewManager
             ShowGridLines = true;
             Background = new SolidColorBrush(Colors.White);
 
-            AddColumnsToGrid();
             AddRowsToGrid();
-            AddCardsToGrid();
+            AddColumnsToGrid();
         }
 
         protected void AddColumnsToGrid()
         {
-            foreach(ColumnDefinition c in ColMgr.GetColumns())
+            foreach(StatusColumn sc in ColMgr.QueryAllColumns())
             {
                 Border rowB = new Border();
                 rowB.Margin = new Thickness(10);
                 Children.Add(rowB);
-                ColumnDefinitions.Add(c);
+                ColumnDefinitions.Add(sc.GetColumnDefinition());
+                List<Card> cards = sc.GetCards();
+                AddCardsToColumn(cards);
             }
         }
 
@@ -54,14 +55,14 @@ namespace ProjectOverviewManager
             }
         }
 
-        protected void AddCardsToGrid()
+        protected void AddCardsToColumn(List<Card> cards)
         {
-           foreach(Card card in CardMgr.GetCards())
+           for (int i=0; i<cards.Count; i++)
             {
-                Children.Add(card.GetCard());
-                SetRow(card, 1); // Här ska en metod för att kolla om första raden är kolumnen är upptagen och om den är det så lägg kortet på raden under.
-                SetColumn(card, card.GetStatusId());
+                 Children.Add(cards[i].GetCardRectangle());
                 
+                 SetRow(cards[i].GetCardRectangle(), i); // Här ska en metod för att kolla om första raden är kolumnen är upptagen och om den är det så lägg kortet på raden under.
+                 SetColumn(cards[i].GetCardRectangle(), cards[i].GetStatusId());
             }
         }
     }

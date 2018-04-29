@@ -57,7 +57,7 @@ namespace ProjectOverviewManager.GUI.Card
             return description;
         }
 
-        public Rectangle GetCard()
+        public Rectangle GetCardRectangle()
         {   
             rectangle.Fill = new SolidColorBrush(System.Windows.Media.Colors.LightSteelBlue);
             return rectangle;

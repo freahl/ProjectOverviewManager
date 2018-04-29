@@ -25,9 +25,9 @@ namespace ProjectOverviewManager
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             mainWindow = new MainWindow();
-            List<Card> cards = CreateCards();
+           // List<Card> cards = CreateCards();
             AddStatusColumns();
-            mainWindow.AddCardsToColumn(cards);
+            //mainWindow.AddCardsToColumn(cards);
             mainWindow.Show();
             ShowWindow();
 
@@ -66,8 +66,8 @@ namespace ProjectOverviewManager
                 while (rdr.Read())
                 {
                     // For every status create a column
-                    StatusColumn statusCol = new StatusColumn(rdr.GetString(1), 200,rdr.GetInt32(0));
-                    mainWindow.AddStatusColumn(statusCol);
+                   /* StatusColumn statusCol = new StatusColumn(rdr.GetString(1), 200,rdr.GetInt32(0));
+                    mainWindow.AddStatusColumn(statusCol);*/
                 }
             }
             connection.Close();

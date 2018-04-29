@@ -20,7 +20,7 @@ namespace ProjectOverviewManager
         {
             connection.Open();
             SQLiteCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Status";
+            cmd.CommandText = "SELECT * FROM Status;";
             using (SQLiteDataReader rdr = cmd.ExecuteReader())
             {
                 while (rdr.Read())
