@@ -25,63 +25,12 @@ namespace ProjectOverviewManager
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             mainWindow = new MainWindow();
-           // List<Card> cards = CreateCards();
-            AddStatusColumns();
-            //mainWindow.AddCardsToColumn(cards);
+         
             mainWindow.Show();
-            ShowWindow();
-
-
-        }
-
-        private List<Card> CreateCards()
-        {
-            List<Card> cardList = new List<Card>();
-            connection.Open();
-            SQLiteCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Card";
-            using (SQLiteDataReader rdr = cmd.ExecuteReader())
-            {
-                while (rdr.Read())
-                {
-                    String title = rdr.GetString(1);
-                    String date = rdr.GetString(2);
-                    int statusId = rdr.GetInt32(3);
-                    String description = rdr.GetString(4);
-                    Card c = new Card(title, date, statusId, description);
-                    cardList.Add(c);
-                }
-            }
-            connection.Close();
-            return cardList;
+            
         }
         
-        private void AddStatusColumns()
-        {
-            connection.Open();
-            SQLiteCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Status";
-            using (SQLiteDataReader rdr = cmd.ExecuteReader())
-            {
-                while (rdr.Read())
-                {
-                    // For every status create a column
-                   /* StatusColumn statusCol = new StatusColumn(rdr.GetString(1), 200,rdr.GetInt32(0));
-                    mainWindow.AddStatusColumn(statusCol);*/
-                }
-            }
-            connection.Close();
-        }
-
-        private void ShowWindow()
-        {   
-            
-            Window RootWindow = new Window();
-           
-            RootWindow.Content = new DynamicGrid();
-            RootWindow.Show();
-            
-        }
+  
     }
 
 }

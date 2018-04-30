@@ -19,7 +19,7 @@ namespace ProjectOverviewManager
         public StatusColumn(string Header, double Width, int columnId, List<Card> cards)
         {
             this.Header = Header; 
-            this.Width = Width;
+            this.Width = '*';
             this.columnId = columnId;
             this.cards = cards;
         }

@@ -19,7 +19,17 @@ namespace ProjectOverviewManager
     
         public DynamicGrid()
         {
-            SetGrid();  
+            Canvas can = new Canvas();
+            Label lab = new Label();
+            can.Background = new SolidColorBrush(Colors.CadetBlue);
+          
+            lab.Content = "I'm a project";
+            can.Margin = new Thickness(10);
+            can.Children.Add(lab);
+            SetGrid();
+            Children.Add(can);
+            SetColumn(can, 3);
+            SetRow(can, 3);
         }
         
         protected void SetGrid()

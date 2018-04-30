@@ -60,6 +60,9 @@ namespace ProjectOverviewManager.GUI.Card
         public Rectangle GetCardRectangle()
         {   
             rectangle.Fill = new SolidColorBrush(System.Windows.Media.Colors.LightSteelBlue);
+            rectangle.RadiusX = 9;
+            rectangle.RadiusY = 9;
+            rectangle.Margin = new Thickness(10);
             return rectangle;
         }
         #endregion

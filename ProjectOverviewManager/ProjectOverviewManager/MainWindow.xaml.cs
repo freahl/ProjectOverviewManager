@@ -26,33 +26,9 @@ namespace ProjectOverviewManager
         public MainWindow()
         {
             InitializeComponent();
-            
+            winContent.Content = new DynamicGrid();
         }
 
-        public void AddStatusColumn(GridViewColumn column)
-        {
-            StatusGrid.Columns.Add(column);
-        }
-
-        public void AddCardsToColumn(List<Card> cards)
-        {
-            StatusColumn cardColumn;
-            foreach (Card card in cards)
-            {
-                int columnStatus = card.GetStatusId();
-
-                foreach (StatusColumn col in StatusGrid.Columns)
-                {
-                    if (columnStatus == col.GetColumnId())
-                    {
-                        cardColumn = col;
-                        break;
-                    }
-                }
-                
-            }
-            
-        }
 
         private void ProjectListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
