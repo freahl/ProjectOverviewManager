@@ -19,17 +19,8 @@ namespace ProjectOverviewManager
     
         public DynamicGrid()
         {
-            Canvas can = new Canvas();
-            Label lab = new Label();
-            can.Background = new SolidColorBrush(Colors.CadetBlue);
-          
-            lab.Content = "I'm a project";
-            can.Margin = new Thickness(10);
-            can.Children.Add(lab);
             SetGrid();
-            Children.Add(can);
-            SetColumn(can, 3);
-            SetRow(can, 3);
+           
         }
         
         protected void SetGrid()
@@ -37,8 +28,8 @@ namespace ProjectOverviewManager
             
             HorizontalAlignment = HorizontalAlignment.Stretch;
             VerticalAlignment = VerticalAlignment.Stretch;
-            ShowGridLines = true;
-            Background = new SolidColorBrush(Colors.White);
+            ShowGridLines = false;
+            Background = new SolidColorBrush(Colors.LightGray);
 
             AddRowsToGrid();
             AddColumnsToGrid();
@@ -52,7 +43,7 @@ namespace ProjectOverviewManager
                 rowB.Margin = new Thickness(10);
                 Children.Add(rowB);
                 ColumnDefinitions.Add(sc.GetColumnDefinition());
-                List<Card> cards = sc.GetCards();
+                List<ProjectCard> cards = sc.GetCards();
                 AddCardsToColumn(cards);
             }
         }
@@ -65,14 +56,14 @@ namespace ProjectOverviewManager
             }
         }
 
-        protected void AddCardsToColumn(List<Card> cards)
+        protected void AddCardsToColumn(List<ProjectCard> cards)
         {
            for (int i=0; i<cards.Count; i++)
             {
-                 Children.Add(cards[i].GetCardRectangle());
+                 Children.Add(cards[i]);
                 
-                 SetRow(cards[i].GetCardRectangle(), i); // Här ska en metod för att kolla om första raden är kolumnen är upptagen och om den är det så lägg kortet på raden under.
-                 SetColumn(cards[i].GetCardRectangle(), cards[i].GetStatusId());
+                 SetRow(cards[i], i); // Här ska en metod för att kolla om första raden är kolumnen är upptagen och om den är det så lägg kortet på raden under.
+                 SetColumn(cards[i], cards[i].GetStatusId());
             }
         }
     }

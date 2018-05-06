@@ -50,7 +50,7 @@ namespace ProjectOverviewManager
                 {
                     int id = rdr.GetInt32(0);
                     String name = rdr.GetString(1);
-                    List<Card> cards = QueryCardsByStatusId(id);
+                    List<ProjectCard> cards = QueryCardsByStatusId(id);
                     StatusColumn col = new StatusColumn(name, 200, id, cards);
                     columns.Add(col);
                 }
@@ -59,9 +59,9 @@ namespace ProjectOverviewManager
             return columns;
         }
 
-        private List<Card> QueryCardsByStatusId(int id)
+        private List<ProjectCard> QueryCardsByStatusId(int id)
         {
-            List<Card> results = new List<Card>();
+            List<ProjectCard> results = new List<ProjectCard>();
             SQLiteCommand cmd = connection.CreateCommand();
             cmd.CommandText = "SELECT * " +
                 "FROM Card " +
@@ -82,7 +82,7 @@ namespace ProjectOverviewManager
                         i++;
                     }
                    
-                    Card c = new Card(title, date, statusId, description);
+                    ProjectCard c = new ProjectCard(title, date, statusId, description);
                     results.Add(c);
                     i = 0;
                 }
@@ -96,7 +96,7 @@ namespace ProjectOverviewManager
             {
                 title = (string)value;
             }
-            else if (colName == "date")
+            else if (colName == "deadline")
             {
                 date = (string)value;
             }
@@ -112,7 +112,7 @@ namespace ProjectOverviewManager
 
         private string CheckTitle(object titleName)
         {
-            if (titleName != null && titleName is String)
+            if (titleName != null && titleName is string)
             { title = titleName.ToString(); }
             else
             { title = ""; }
@@ -121,7 +121,7 @@ namespace ProjectOverviewManager
 
         private string CheckDate(object projectDate)
         {
-            if (projectDate != null && projectDate is String)
+            if (projectDate != null && projectDate is string)
             { date = projectDate.ToString(); }
             else
             { date = ""; }
@@ -130,7 +130,7 @@ namespace ProjectOverviewManager
 
         private string CheckDescription(object projectDescr)
         {
-            if (projectDescr != null && projectDescr is String)
+            if (projectDescr != null && projectDescr is string)
             { description = projectDescr.ToString(); }
             else
             { description = ""; }

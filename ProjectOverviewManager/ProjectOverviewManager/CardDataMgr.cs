@@ -14,9 +14,9 @@ namespace ProjectOverviewManager
     class CardDataMgr
     {
         private SQLiteConnection connection = new SQLiteConnection(ConfigurationManager.ConnectionStrings["local_sqlite"].ConnectionString);
-        List<Card> cards = new List<Card>();
+        List<ProjectCard> cards = new List<ProjectCard>();
 
-        public List<Card> GetCards()
+        public List<ProjectCard> GetCards()
         {
             connection.Open();
             SQLiteCommand cmd = connection.CreateCommand();
@@ -25,11 +25,11 @@ namespace ProjectOverviewManager
             {
                 while (rdr.Read())
                 {
-                    String title = rdr.GetString(1);
-                    String date = rdr.GetString(2);
+                    string title = rdr.GetString(1);
+                    string date = rdr.GetString(2);
                     int statusId = rdr.GetInt32(3);
-                    String description = rdr.GetString(4);
-                    Card c = new Card(title, date, statusId, description);
+                    string description = rdr.GetString(4);
+                    ProjectCard c = new ProjectCard(title, date, statusId, description);
                     cards.Add(c);
                 }
             }

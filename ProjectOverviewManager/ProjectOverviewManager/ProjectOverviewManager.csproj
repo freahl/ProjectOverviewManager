@@ -81,6 +81,7 @@
     <Compile Include="GridTestWindow.xaml.cs">
       <DependentUpon>GridTestWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProjectCard.cs" />
     <Compile Include="RowDataMgr.cs" />
     <Compile Include="ShowRectWindow.xaml.cs">
       <DependentUpon>ShowRectWindow.xaml</DependentUpon>

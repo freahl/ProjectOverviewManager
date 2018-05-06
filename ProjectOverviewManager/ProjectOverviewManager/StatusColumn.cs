@@ -14,9 +14,9 @@ namespace ProjectOverviewManager
     {
         private ColumnDefinition columnDefinition = new ColumnDefinition();
         private int columnId;
-        private List<Card> cards;
+        private List<ProjectCard> cards;
 
-        public StatusColumn(string Header, double Width, int columnId, List<Card> cards)
+        public StatusColumn(string Header, double Width, int columnId, List<ProjectCard> cards)
         {
             this.Header = Header; 
             this.Width = '*';
@@ -34,7 +34,7 @@ namespace ProjectOverviewManager
             return columnId;
         }
 
-        public List<Card> GetCards()
+        public List<ProjectCard> GetCards()
         {
             return cards;
         }
