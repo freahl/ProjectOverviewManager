@@ -10,8 +10,6 @@ namespace ProjectOverviewManager
 {
     public class RowDataMgr
     {
-
-
         private SQLiteConnection connection = new SQLiteConnection(ConfigurationManager.ConnectionStrings["local_sqlite"].ConnectionString);
         private List<RowDefinition> rows = new List<RowDefinition>();
 

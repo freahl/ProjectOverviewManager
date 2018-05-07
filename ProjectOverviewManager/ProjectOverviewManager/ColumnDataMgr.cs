@@ -36,7 +36,6 @@ namespace ProjectOverviewManager
                     columnName.Add(colName);
                 }
             }
-           
             return columnName;
         }
         public List<StatusColumn> QueryAllColumns()
@@ -51,7 +50,7 @@ namespace ProjectOverviewManager
                     int id = rdr.GetInt32(0);
                     String name = rdr.GetString(1);
                     List<ProjectCard> cards = QueryCardsByStatusId(id);
-                    StatusColumn col = new StatusColumn(name, 200, id, cards);
+                    StatusColumn col = new StatusColumn(name, id, cards);
                     columns.Add(col);
                 }
             }
@@ -70,7 +69,6 @@ namespace ProjectOverviewManager
             {
                 while (rdr.Read())
                 {
-
                     List<string> columnList = GetAllColumnNames();
                     foreach(string colName in columnList)
                     {
