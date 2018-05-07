@@ -13,14 +13,29 @@ namespace ProjectOverviewManager
 {
     public class ProjectCard : Canvas
     {
-        protected String title;
-        protected String description;
-        protected String date;
+        protected string title;
+        protected string description;
+        protected string date;
         protected int statusId;
         public Label ProjectTitle = new Label();
         public Label ProjectDate = new Label();
         public Rectangle ProjectBackground = new Rectangle();
-        
+
+
+        public ProjectCard(string title, string date,string description)
+        {//Default constructor med status att hamna i första kolumnen.
+            Background = new SolidColorBrush(Colors.LightBlue);
+            Margin = new Thickness(10);
+            AddChildren();
+
+            ProjectTitle.Content = title;
+            ProjectDate.Content = date;
+            this.title = title;
+            this.date = date;
+            this.statusId = 1;
+            this.description = description;
+
+        }
 
         public ProjectCard(string title, string date, int statusId, string description)
         {

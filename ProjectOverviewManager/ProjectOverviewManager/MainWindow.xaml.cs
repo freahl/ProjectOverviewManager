@@ -37,8 +37,14 @@ namespace ProjectOverviewManager
 
         private void newProject_Click(object sender, RoutedEventArgs e)
         {
-            CardWindow cardWindow = new CardWindow();
-            cardWindow.Show();
+            ProjectCardWindow ProjectWindow = new ProjectCardWindow();
+            ProjectWindow.Show();
+            CreateNewCard(ProjectWindow);
+        }
+
+        private void CreateNewCard(ProjectCardWindow window)
+        {
+            
         }
     }
 }

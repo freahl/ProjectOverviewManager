@@ -82,15 +82,14 @@
       <DependentUpon>GridTestWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProjectCard.cs" />
+    <Compile Include="ProjectCardWindow.xaml.cs">
+      <DependentUpon>ProjectCardWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RowDataMgr.cs" />
     <Compile Include="ShowRectWindow.xaml.cs">
       <DependentUpon>ShowRectWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StatusColumn.cs" />
-    <Page Include="CardWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="GridTestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,9 +106,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CardWindow.xaml.cs">
-      <DependentUpon>CardWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Card\Card.xaml.cs">
       <DependentUpon>Card.xaml</DependentUpon>
     </Compile>
@@ -117,6 +113,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProjectCardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ShowRectWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

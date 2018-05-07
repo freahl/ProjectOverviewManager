@@ -36,5 +36,19 @@ namespace ProjectOverviewManager
             connection.Close();
             return cards;
         }
+
+        public void InsertCardToDataBase(ProjectCard Card)
+        {
+            connection.Open();
+            SQLiteCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "INSERT INTO Card(title,deadline,status,description)"+
+                 " Values("+Card.GetTitle()+","+Card.GetDate()+"," +
+                 Card.GetStatusId()+","+Card.GetDescription()+")";
+
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            
+
+        }
     }
 }

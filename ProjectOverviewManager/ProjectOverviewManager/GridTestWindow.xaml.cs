@@ -40,7 +40,7 @@ namespace ProjectOverviewManager
                 int c = -1;
                 foreach(ColumnDefinition cd in TestGrid.ColumnDefinitions)
                 { c++;
-                    CardWindow card = new CardWindow();
+                    ProjectCardWindow card = new ProjectCardWindow();
 
                     Grid.SetColumn(card, c);
                     Grid.SetRow(card, r);
