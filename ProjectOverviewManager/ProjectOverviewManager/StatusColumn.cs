@@ -16,12 +16,12 @@ namespace ProjectOverviewManager
         private int columnId;
         private List<ProjectCard> cards;
 
-        public StatusColumn(string Header, double Width, int columnId, List<ProjectCard> cards)
+        public StatusColumn(string Header, int columnId, List<ProjectCard> cards)
         {
             this.Header = Header; 
-            this.Width = '*';
             this.columnId = columnId;
             this.cards = cards;
+            this.Width = '*';
         }
 
         public ColumnDefinition GetColumnDefinition()
